@@ -12,6 +12,10 @@ jobs:
       - name: 'ASDF Install'
         uses: asdf-vm/actions/install@v1
 
+      - name: 'Bypass Failure to Detect Node'
+        run: |
+          asdf install
+
       - name: 'Test Tools'
         run: |
           terraform --version
