@@ -9,6 +9,9 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@main
 
+      - name: 'Troubleshooting'
+        run: cp .asdfrc $HOME/.asdfrc
+
       - name: 'ASDF Install'
         uses: asdf-vm/actions/install@v1
 
