@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@main
 
       - name: 'ASDF Install'
-        uses: asdf-vm/actions/install@v1.1
+        uses: asdf-vm/actions/install@v1
 
       - name: 'Bypass Failure to Detect Node'
         run: |
