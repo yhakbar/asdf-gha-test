@@ -9,15 +9,11 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@main
 
-      - name: 'Troubleshooting'
-        run: cp .asdfrc $HOME/.asdfrc
-
       - name: 'ASDF Install'
         uses: asdf-vm/actions/install@v1
-
-      - name: 'Bypass Failure to Detect Node'
-        run: |
-          asdf install nodejs
+        with:
+          before_install: |
+            bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 
       - name: 'Test Tools'
         run: |
